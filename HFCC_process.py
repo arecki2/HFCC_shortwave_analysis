@@ -4,6 +4,11 @@ from collections import Counter
 import random
 import os
 
+"""
+    Processor script for a HFCC database file. Go to a schedule page for a given season (e.g. https://new.hfcc.org/data/b26/), download ZIP file provided, unpact the file whose filename contains "all00.TXT", and point to it in the script.
+    The script removes some unnecessary data, and saves the fine-grained database in SQLite db file. Optionally, it also exports it to CSV.
+"""
+
 def process_schedule_file(file_path, db_name="b26.db", table_name="B26", export_csv=True, csv_output="B26.csv"):
     # Define the fixed-width column specifications (name, length, type)
     columns_spec = [

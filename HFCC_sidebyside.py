@@ -3,6 +3,10 @@ import pandas as pd
 import sys
 from itertools import zip_longest
 
+"""
+    Companion script to HFCC_process.py. It takes shortwave schedules from two HFCC databases (e.g. for two seasons) in processed SQLite database format, and lists them side-by-side, grouped by broadcaster's three-letter code, and then by language.
+"""
+
 def print_side_by_side_independent(a26_db_path, b26_db_path, a26_table, b26_table, output_path="side_by_side_output.txt"):
     # Redirect output to both terminal and text file
     class Tee(object):
